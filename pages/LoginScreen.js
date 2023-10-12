@@ -11,8 +11,8 @@ import {
   Pressable,
 } from "react-native";
 
-export default function App() {
-  const [email, setEmail] = useState("");
+export default function App({ navigation }) {
+  const [username, setUsername] = useState("");
 
   const [password, setPassword] = useState("");
 
@@ -25,12 +25,9 @@ export default function App() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Email"
+          placeholder="Username"
           placeholderTextColor="#fff"
-          keyboardType="email-address"
-          autoCapitalize="none"
-          autoCorrect={false}
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(username) => setUsername(username)}
         />
       </View>
 
@@ -48,8 +45,17 @@ export default function App() {
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
 
-      <Pressable style={styles.button}>
-        <Text style={styles.text}>LOGIN</Text>
+      <Pressable
+        style={styles.button}
+        onPress={() =>
+          password === "123"
+            ? navigation.navigate("WelcomeScreen", {
+                username,
+              })
+            : alert("Senha incorreta")
+        }
+      >
+        <Text style={styles.btnText}>LOGIN</Text>
       </Pressable>
     </View>
   );
@@ -63,8 +69,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    height: 90,
-    width: 90,
+    height: 70,
+    width: 70,
     marginBottom: 40,
   },
   inputView: {
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     width: "70%",
     height: 45,
     marginBottom: 20,
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   TextInput: {
     color: "#fff",
@@ -92,13 +98,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "80%",
-    marginTop: 40,
+    marginTop: 20,
     height: 50,
     paddingHorizontal: 32,
     borderRadius: 25,
     backgroundColor: "#fff",
   },
-  text: {
+  btnText: {
     fontSize: 18,
     lineHeight: 21,
     fontWeight: "bold",

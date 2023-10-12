@@ -7,6 +7,7 @@ import HomeScreen from "./pages/HomeScreen";
 import LoginScreen from "./pages/LoginScreen";
 import DetailsScreen from "./pages/Details";
 import CreatePost from "./pages/CreatePost";
+import WelcomeScreen from "./pages/WelcomeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,8 +30,8 @@ function App() {
           initialParams={{ itemId: "3" }}
         />
         <Stack.Screen
-          name="CreatePost"
-          component={CreatePost}
+          name="WelcomeScreen"
+          component={WelcomeScreen}
           options={{ title: "Postar algo novo" }}
         />
       </Stack.Navigator>
