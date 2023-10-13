@@ -9,11 +9,11 @@ import {
   TextInput,
   TouchableOpacity,
   Pressable,
+  Alert,
 } from "react-native";
 
 export default function App({ navigation }) {
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
 
   return (
@@ -52,7 +52,7 @@ export default function App({ navigation }) {
             ? navigation.navigate("WelcomeScreen", {
                 username,
               })
-            : alert("Senha incorreta")
+            : Alert.alert("Wrong pass", "Please try again")
         }
       >
         <Text style={styles.btnText}>LOGIN</Text>

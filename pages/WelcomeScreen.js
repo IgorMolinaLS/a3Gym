@@ -1,24 +1,18 @@
 import React from "react";
-import {
-  Button,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const WelcomeScreen = ({ route }) => {
+const WelcomeScreen = ({ route, navigation }) => {
   const { username } = route.params;
+
   return (
     <View style={styles.container}>
       <View style={styles.greeting}>
         <View style={styles.hello}>
+          <Text style={styles.txtIcon}>Hello, {username}</Text>
           <Image
             style={styles.imgIcon}
-            source={require("../assets/hello.png")}
+            source={require("../assets/wave.png")}
           />
-          <Text style={styles.txtIcon}>Hello, {username}</Text>
         </View>
         <View style={styles.greet}>
           <Text style={styles.subtext}>Have a good training section :D</Text>
@@ -31,7 +25,10 @@ const WelcomeScreen = ({ route }) => {
             source={require("../assets/historyIcon.png")}
           />
           <Text style={styles.txtIcon}>Training history</Text>
-          <TouchableOpacity style={styles.arrowContainer}>
+          <TouchableOpacity
+            style={styles.arrowContainer}
+            onPress={() => navigation.navigate("HistoryScreen")}
+          >
             <Image
               style={styles.arrowIcon}
               source={require("../assets/rightArrow.png")}
@@ -46,7 +43,10 @@ const WelcomeScreen = ({ route }) => {
             source={require("../assets/startExercise.png")}
           />
           <Text style={styles.txtIcon}>Start exercise</Text>
-          <TouchableOpacity style={styles.arrowContainer}>
+          <TouchableOpacity
+            style={styles.arrowContainer}
+            onPress={() => navigation.navigate("ChooseExScreen")}
+          >
             <Image
               style={styles.arrowIcon}
               source={require("../assets/rightArrow.png")}
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   greet: {
     flex: 1,
-    backgroundColor: "yellow",
+    backgroundColor: "#8f59c6",
     alignItems: "center",
   },
   hello: {
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "#8f59c6",
     width: "100%",
   },
   history: {
@@ -111,14 +111,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     padding: 10,
-    backgroundColor: "green",
+    backgroundColor: "#6e32a0",
     width: "100%",
   },
   tracker: {
     flex: 3,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "orange",
+    backgroundColor: "#8f59c6",
     width: "100%",
   },
 });

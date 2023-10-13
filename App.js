@@ -1,13 +1,10 @@
 import * as React from "react";
-import { Button, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./pages/HomeScreen";
 import LoginScreen from "./pages/LoginScreen";
-import DetailsScreen from "./pages/Details";
-import CreatePost from "./pages/CreatePost";
 import WelcomeScreen from "./pages/WelcomeScreen";
+import ChooseExScreen from "./pages/ChooseExScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,21 +16,9 @@ function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="Home"
-          component={LoginScreen}
-          options={{ title: "Login" }}
-        />
-        <Stack.Screen
-          name="Details"
-          component={DetailsScreen}
-          initialParams={{ itemId: "3" }}
-        />
-        <Stack.Screen
-          name="WelcomeScreen"
-          component={WelcomeScreen}
-          options={{ title: "Postar algo novo" }}
-        />
+        <Stack.Screen name="Home" component={LoginScreen} />
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="ChooseExScreen" component={ChooseExScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
