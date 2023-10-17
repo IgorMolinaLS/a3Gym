@@ -2,12 +2,12 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export const ExerciseItem = ({ icon, title }) => {
+export const ExerciseItem = ({ icon, title, navigateTo }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => navigation.goBack()}
+      onPress={() => navigation.navigate(`${navigateTo}`)}
     >
       <View>
         <View style={{ height: "5%" }} />
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "space-around",
     borderWidth: 1,
     borderRadius: 30,
   },
-  icon: { height: 70, width: 70, marginRight: "20%" },
+  icon: { height: 70, width: 70 },
   text: { fontSize: 20, fontWeight: "400" },
 });

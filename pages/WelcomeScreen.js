@@ -8,7 +8,7 @@ const WelcomeScreen = ({ route, navigation }) => {
     <View style={styles.container}>
       <View style={styles.greeting}>
         <View style={styles.hello}>
-          <Text style={styles.txtIcon}>Hello, {username}</Text>
+          <Text style={styles.txtIcon}>Hello {username ? username : ""}</Text>
           <Image
             style={styles.imgIcon}
             source={require("../assets/wave.png")}
