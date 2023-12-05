@@ -24,10 +24,26 @@ export const LegsExercises = () => {
             icon={images.Squat}
             navigateTo="Camera"
           />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

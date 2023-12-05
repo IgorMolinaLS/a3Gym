@@ -17,13 +17,33 @@ export const ArmsExercises = () => {
           <ExerciseItem
             title="Barbell Biceps Curl"
             icon={images.BarbellBiceps}
-            navigateTo=""
+            navigateTo="Camera"
           />
-          <ExerciseItem title="Triceps Extension" icon={images.Triceps} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
-          <ExerciseItem title="placeholder" icon={images.Placeholder} />
+          <ExerciseItem
+            title="Triceps Extension"
+            icon={images.Triceps}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
+          <ExerciseItem
+            title="placeholder"
+            icon={images.Placeholder}
+            navigateTo="Camera"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
